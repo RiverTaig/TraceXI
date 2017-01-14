@@ -1,0 +1,6 @@
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\bin\TraceXI.dll.config
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\bin\TraceXI.dll
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\bin\TraceXI.pdb
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\obj\Debug\TraceXI.dll
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\obj\Debug\TraceXI.pdb
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\obj\Debug\TraceXI.csprojResolveAssemblyReference.cache

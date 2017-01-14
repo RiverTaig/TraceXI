@@ -1,0 +1,6 @@
+C:\TraceXI\AwaitPlayground\bin\Debug\AwaitPlayground.exe.config
+C:\TraceXI\AwaitPlayground\bin\Debug\AwaitPlayground.exe
+C:\TraceXI\AwaitPlayground\bin\Debug\AwaitPlayground.pdb
+C:\TraceXI\AwaitPlayground\obj\Debug\AwaitPlayground.csprojResolveAssemblyReference.cache
+C:\TraceXI\AwaitPlayground\obj\Debug\AwaitPlayground.exe
+C:\TraceXI\AwaitPlayground\obj\Debug\AwaitPlayground.pdb

@@ -2,6 +2,37 @@
 /// <reference path="Mapping.Infrastructure.d.ts" />
 declare module geocortex.essentialsHtmlViewer {
     /**
+     * Options used by `obtainConfigFromAlias` within `ViewerLoader` to retrieve a viewer's configuration path.
+     */
+    interface ViewerSettingsEndpointParams {
+        alias?: string;
+        hasToken: boolean;
+        endpoints: Object[];
+        index: number;
+        /** ViewerInitializationOptions to which the appropriate configuration path will be added. */
+        options?: ViewerInitializationOptions;
+        /** The success callback. */
+        onSuccess?: (displaySplashScreen?: boolean) => void;
+        /** The error callback. */
+        onError?: () => void;
+    }
+}
+declare module geocortex.framework.application.loading {
+    /**
+     * Object-form representation of a query string (part of a URL following a question mark). Parameter names and values are decoded.
+     */
+    class QueryParameters {
+        /** All members must be strings. */
+        [key: string]: string;
+        /**
+         * Construct a QueryParameters instance, optionally providing in a URL containing a query string to parse from.
+         * @param url The URL to parse from. Defaults to `window.location.href`.
+         */
+        constructor(url?: string);
+    }
+}
+declare module geocortex.essentialsHtmlViewer {
+    /**
      * Represents and controls the behavior of the splash screen.
      * Auto-detects CSS transition support.
      */
@@ -19,6 +50,11 @@ declare module geocortex.essentialsHtmlViewer {
          * Create a new Splash instance for controlling the default existing splash screen markup by the classname "splash-overlay".
          */
         static getDefaultSplash(): Splash;
+        /**
+         * Display the (custom) splash screen, removes splashPreLoader from the DOM.
+         * @returns This instance (chainable).
+         */
+        display(splashScreenUrl?: string): Splash;
         /**
          * Destroys the splash screen, removes splashOverlay from the DOM.
          * @returns This instance (chainable).
@@ -321,10 +357,15 @@ declare module geocortex.essentialsHtmlViewer {
      * Options used by `ViewerLoader` to load resources (prior to application initialization).
      */
     interface ViewerLoaderOptions {
-        /** Prefix string prepended to all locally hosted resources. Defaults to "./". */
-        baseUrl?: string;
+        /** URL prefix for locally hosted resources of the viewer loader's ResourceSet. Defaults to "./". */
+        loaderResourcePrefix?: string;
         /** Whether or not load Esri scripts locally or from the cloud. */
         useLocalEsriApi?: boolean;
+        /**
+         * Deprecated name for 'loaderResourcePrefix'.
+         * @deprecated 2.5.1
+         */
+        baseUrl?: string;
     }
 }
 declare module geocortex.essentialsHtmlViewer {
@@ -369,6 +410,10 @@ declare module geocortex.essentialsHtmlViewer {
          * Callback that is called when the `ViewerApplication` fires its "SiteInitializedEvent" framework event.
          */
         onSiteInitialized?: (viewer: ViewerApplication, loader: ViewerLoader) => void;
+        /**
+         * Custom splash screen url
+         */
+        splashScreenUrl?: string;
     }
 }
 declare module geocortex.framework.application.loading {
@@ -430,6 +475,7 @@ declare module geocortex.essentialsHtmlViewer {
          * @returns An initialized `ViewerApplication` instance.
          */
         initializeApplication(options?: ViewerInitializationOptions): ViewerApplication;
+        obtainConfigFromAlias(options: any, onSuccess: any, onError: any): void;
         /**
          * Loads the resourceSet, and then creates and initializes a `ViewerApplication` object.
          * Unlike the base class super method, this method hitches onto the provided onError option to close the splash screen when an error occurs.
@@ -437,9 +483,20 @@ declare module geocortex.essentialsHtmlViewer {
          * @param options Object literal which specifies `ViewerInitializationOptions` are used internally by `initializeApplication` to setup the `ViewerApplication`.
          */
         loadAndInitialize(options?: ViewerInitializationOptions): void;
+        private resolveSplashScreenUrl(baseUrl, splashScreenUrl);
+        getViewerSettingsFromJson(onSuccess: (arg: any) => void, onError: (err: Error) => void): void;
+        canPassWithoutRedirect(json: any, hasToken: any, securityUrl: any): boolean;
+        getConfigBaseFromEndpoints(endpointParams: ViewerSettingsEndpointParams): void;
+        replaceConfigParamsWithAliasInUrl(url: string, alias: any): string;
+        loadQueryParams(options?: ViewerInitializationOptions): Object;
+        getSiteIDFromConfig(url: string): string;
+        getViewerIDFromConfig(url: string): string;
         /**
-         * ViewerLoader variety of handleError destroys the splash screen.
-         */
+          * ViewerLoader variety of handleError destroys the splash screen.
+          */
         protected handleError(error: Error, handler?: (error: Error, loader: ViewerLoader) => void, viewer?: ViewerApplication): void;
     }
+    function tryParseJson(objectToParse: any): any;
+    function getJson(url: any, onSuccess: any, onError: any): void;
+    function xhrGet(url: any, onSuccess: any, onError: any): void;
 }

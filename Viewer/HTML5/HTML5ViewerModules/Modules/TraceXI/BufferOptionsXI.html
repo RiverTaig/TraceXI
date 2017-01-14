@@ -1,0 +1,26 @@
+﻿<div class="" id="traceXI-buffer-settings">
+    <div class="se-table">
+        <div class="se-row">
+            <div class="se-label">Show Buffer:</div>
+            <div class="se-detail"><input type="checkbox" checked="checked" id="XI_showBuffer" /></div>
+        </div>
+        <div class="se-row">
+            <div class="se-label">Size:</div>
+            <div class="se-detail">
+                <input style="width:100px;display:inline-block;" id="XI_bufferSize" type="range" min="1" max="50" steps="1" />
+                <div style="width:20px;display:inline-block;" data-binding="{@text: sizeBuffer}"></div>
+            </div>
+        </div>
+        <div class="se-row">
+            <div class="se-label">Opacity:</div>
+            <div class="se-detail">
+                <input style="width:100px;display:inline-block;" id="XI_bufferOpacity" type="range" min="0" max="100" steps="1" />
+                <div style="width:20px;display:inline-block;" data-binding="{@text: opacity}"></div>
+            </div>
+        </div>
+        <div class="se-row">
+            <div class="se-label">Color:</div>
+            <div class="se-detail"><input id="XI_bufferColor" data-binding="{@value: color}" /></div>
+        </div>
+    </div>
+</div>

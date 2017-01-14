@@ -1,0 +1,1 @@
+C:\TraceXI\DownstreamTrace\obj\Debug\DownstreamTrace.csprojResolveAssemblyReference.cache

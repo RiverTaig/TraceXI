@@ -1,0 +1,215 @@
+﻿
+.region .view.TemplateModuleView.active {
+	margin: 0;
+}
+
+.template-module-view {
+	z-index: 100;
+	width: 325px;
+	right: 0;
+	background: white;
+	color: black;
+	border: none;
+	margin: 5px;
+}
+
+input[type=range] {
+	/*removes default webkit styles*/
+	-webkit-appearance: none;
+	/*fix for FF unable to apply focus style bug */
+	border: 1px solid white;
+	/*required for proper track sizing in FF*/
+	width: 90%;
+}
+
+	input[type=range]::-webkit-slider-runnable-track {
+		width: 90%;
+		height: 5px;
+		background: #ddd;
+		border: none;
+		border-radius: 3px;
+	}
+
+	input[type=range]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		border: none;
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+		background: #009530;
+		margin-top: -4px;
+	}
+
+	input[type=range]:focus {
+		outline: none;
+	}
+
+		input[type=range]:focus::-webkit-slider-runnable-track {
+			background: #ccc;
+		}
+
+	input[type=range]::-moz-range-track {
+		width: 90%;
+		height: 5px;
+		background: #ddd;
+		border: none;
+		border-radius: 3px;
+	}
+
+	input[type=range]::-moz-range-thumb {
+		border: none;
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+		background: #009530;
+	}
+
+	/*hide the outline behind the border*/
+	input[type=range]:-moz-focusring {
+		outline: 1px solid white;
+		outline-offset: -1px;
+	}
+
+	input[type=range]::-ms-track {
+		width: 90%;
+		height: 5px;
+		/*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+		background: transparent;
+		/*leave room for the larger thumb to overflow with a transparent border */
+		border-color: transparent;
+		border-width: 6px 0;
+		/*remove default tick marks*/
+		color: transparent;
+	}
+
+	input[type=range]::-ms-fill-lower {
+		background: #777;
+		border-radius: 10px;
+	}
+
+	input[type=range]::-ms-fill-upper {
+		background: #ddd;
+		border-radius: 10px;
+	}
+
+	input[type=range]::-ms-thumb {
+		border: none;
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+		background: #009530;
+	}
+
+	input[type=range]:focus::-ms-fill-lower {
+		background: #888;
+	}
+
+	input[type=range]:focus::-ms-fill-upper {
+		background: #ccc;
+	}
+
+
+
+.se-table {
+	margin-top: 8px;
+}
+
+	.se-table .se-row {
+	}
+
+		.se-table .se-row input,
+		.se-table .se-row label {
+			display: inline-block;
+		}
+
+		.se-table .se-row input {
+			margin-right: 8px;
+		}
+
+		.se-table .se-row label {
+			margin-top: -2px;
+		}
+
+		.se-table .se-row:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+
+	.se-table .se-row {
+		display: inline-block;
+	}
+/* start commented backslash hack \*/
+* html .clearfix {
+	height: 1%;
+}
+
+.se-table .se-row {
+	display: block;
+}
+
+	.se-table .se-row .se-label,
+	.se-table .se-row .se-detail {
+		display: inline-block;
+	}
+
+	.se-table .se-row .se-label {
+		color: #656189;
+		min-width: 100px;
+		text-align: right;
+		margin-right: 2px;
+	}
+
+	.se-table .se-row .se-detail {
+		min-width: 100px;
+		text-align: left;
+	}
+
+.show-results-table-button-view {
+	position: relative;
+	overflow: visible;
+}
+
+.show-results-table-button {
+	display: block;
+	width: 2.75em;
+	background: url("./Resources/Images/Icons/view-list-24.png") no-repeat center center #F8F8F8;
+	text-indent: -99999em;
+	border-radius: 0.25rem;
+	float: left;
+	margin: 0;
+	height: 2.75em;
+	border: 1px solid #d9d9d9;
+	float: right;
+}
+
+#trace-buffer-settings {
+}
+
+	#trace-buffer-settings .se-table {
+		width: 225px;
+	}
+
+		#trace-buffer-settings .se-table .se-row {
+			min-height: 32px;
+		}
+
+		#trace-buffer-settings .se-table .se-row input {
+			margin-right: -2px;
+		}
+
+			#trace-buffer-settings .se-table .se-row .se-label {
+				min-width: 80px;
+			}
+
+			#trace-buffer-settings .se-table .se-row .se-detail {
+				min-width: 125px;
+			}
+
+.electric-trace-options-view {	
+	width: auto;
+	overflow: hidden;
+}

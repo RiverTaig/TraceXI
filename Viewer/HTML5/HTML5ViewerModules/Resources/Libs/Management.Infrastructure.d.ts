@@ -188,6 +188,7 @@ declare module geocortex.essentialsHtmlViewer.management.infrastructure.utils {
     function createHiddenEsriMap(): esri.Map;
     function htmlDecode(text: string): string;
     function unescapeSiteStrings(site: geocortex.essentials.Site): void;
+    function contentIsLocaleString(content: string): boolean;
     function toPropertyDescriptor(value: any): PercentagePropertyDescriptor;
     function toPropertyValue(descriptor: PercentagePropertyDescriptor): string | number;
 }

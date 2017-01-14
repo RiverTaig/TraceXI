@@ -1,8 +1,9 @@
-///<reference path='LayerTheme.Rest.d.ts' />
+/// <reference path='LayerTheme.Rest.d.ts' />
 
 // Type definitions for the configurable layer list rest endpoint
-// {siteUri }/map/layerlist
+// {siteUri}/map/layerlist
 
+/** @docs-hide-from-nav */
 interface RestLayerListItem {
     id: string;
     type: string;
@@ -19,8 +20,10 @@ interface RestLayerListItem {
     iconUri?: string;
 }
 
+/** @docs-hide-from-nav */
 interface RestLayerList {
     items: RestLayerListItem[];
+    userAddedLayersDestinationId: string;
     properties?: RestProperty[];
     extensions?: RestExtension[];
 }

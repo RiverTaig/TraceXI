@@ -1,0 +1,81 @@
+﻿<div class="TraceOptionsXI-view" style="margin-left:5px" id="trace-buffer-settings">
+    <div id="test">
+        <div class="ondisplay">
+            <div class="xiDiv">
+                <div>PRESETS</div>
+                <div class="xiDivContent">
+                    <label class="dropdown">
+                        <select>
+                            <option>All Fields</option>
+                            <option>5 Layers 5 Fields</option>
+                            <option>Model Names</option>
+                            <option>Parallel</option>
+                            <option>Lazy Load</option>
+                            <option>Server Side</option>
+                            <option>Cached JSON</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="xiDiv">
+                <div>PHASES TO TRACE</div>
+                <div class="xiDivContent">
+                    <label class="dropdown">
+                        <select id="traceXI_Phase">
+                            <option>ABC</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>AB</option>
+                            <option>AC</option>
+                            <option>BC</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="xiDiv">
+                <div>MODEL NAME</div>
+                <div class="xiDivContent">
+                    <input type="text" class="xiText" id="xiModelName" data-binding="{@value: _modelName}" /><br>
+                </div>
+            </div>
+            <div class="xiDiv">
+                <div>SERVER OPTIONS</div>
+                <div class="xiDivContent">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <div class="slider round" id="x"></div>
+                        <label class="lbl" for="x">Parallel</label>
+                    </label><br>
+
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <div class="slider round" id="x"></div>
+                        <label class="lbl" for="x">Return by Class</label>
+                    </label><br>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <div class="slider round" id="x"></div>
+                        <label class="lbl" for="x">Union on Server</label>
+                    </label><br>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <div class="slider round" id="x"></div>
+                        <label class="lbl" for="x">Lazy Load</label>
+                    </label><br>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <div class="slider round" id="x"></div>
+                        <label class="lbl" for="x">No JSON</label>
+                    </label>
+                </div>
+            </div>
+            <div class="xiDiv">
+                <div>Trace Result ID</div>
+                <div class="xiDivContent">
+                    <input type="text" class="xiText" value="-1" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\bin\TraceXI_Module.dll
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\bin\TraceXI_Module.pdb
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\obj\Debug\TraceXI_Module.dll
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\obj\Debug\TraceXI_Module.pdb

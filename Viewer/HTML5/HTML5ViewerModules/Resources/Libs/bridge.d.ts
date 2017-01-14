@@ -1,4 +1,4 @@
-/// <reference path="bluebird.d.ts" />
+/// <reference path="../_Definitions/bluebird.d.ts" />
 declare module geocortex.essentialsHtmlViewer.integration {
     class MessageBroker<T extends MessageTransport<any, any>> {
         onReady: (message: protocol.HandshakeResponse) => void;

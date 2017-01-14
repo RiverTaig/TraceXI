@@ -1,1 +1,0 @@
-﻿This folder is for your custom images. By placing images in this folder, you ensure they won't be overwritten during the upgrade process.
