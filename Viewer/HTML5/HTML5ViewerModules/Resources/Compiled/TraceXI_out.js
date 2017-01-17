@@ -1131,7 +1131,6 @@ var TraceXI;
                 this.feederLayer.add(g);
             }
             this._feederGraphic.setSymbol(lineSymbol);
-            //this.app.map.graphics.add(g);
         };
         TraceXI_Module.prototype.addToTraceResults = function (collection) {
             console.log("In Add to Trace results");

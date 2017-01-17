@@ -688,9 +688,6 @@ module TraceXI {
             }
             this._feederGraphic.setSymbol(lineSymbol);
 
-            //this.app.map.graphics.add(g);
-            
-
         }
         addToTraceResults(collection: geocortex.essentialsHtmlViewer.mapping.infrastructure.FeatureSetCollection)  {
             console.log("In Add to Trace results");
