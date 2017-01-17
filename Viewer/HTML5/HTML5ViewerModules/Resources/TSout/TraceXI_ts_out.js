@@ -1020,15 +1020,7 @@ var TraceXI;
             }
             var lineSymbolUp = new esri.symbol.CartographicLineSymbol(esri.symbol.CartographicLineSymbol.STYLE_SOLID, new esri.Color([0, 255, 0, .5]), this._size, esri.symbol.CartographicLineSymbol.CAP_ROUND, esri.symbol.CartographicLineSymbol.JOIN_ROUND, "3");
             var lineSymbolDown = new esri.symbol.CartographicLineSymbol(esri.symbol.CartographicLineSymbol.STYLE_SOLID, new esri.Color([0, 0, 255, .5]), this._size, esri.symbol.CartographicLineSymbol.CAP_ROUND, esri.symbol.CartographicLineSymbol.JOIN_ROUND, "3");
-            //var rgbUp: any = this.hexToRgb(this.viewModel.upstreamColor.get());
-            //var red: number = rgbUp.r;
-            //var green: number = rgbUp.g;
-            //var blue: number = rgbUp.b;
             lineSymbolUp.setColor(new esri.Color([0, 255, 0, 0.5]));
-            //var rgbDown: any = this.hexToRgb(this.viewModel.downstreamColor.get());
-            //red = rgbDown.r;
-            //green = rgbDown.g;
-            //blue = rgbDown.b;
             lineSymbolDown.setColor(new esri.Color([0, 0, 255, 0.5]));
             if (this._upstreamGraphic !== null) {
                 this._upstreamGraphic.setSymbol(lineSymbolUp);
