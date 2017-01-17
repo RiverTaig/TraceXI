@@ -17,24 +17,24 @@ module TraceXI {
             this.app.command("on_BufferOptionsXI_ViewModel_View_Notify").register(this, this.on_ViewModel_View_Notify);
 
             $("#XI_showBuffer").on('change', () => {
-                this.app.command("XI_showBuffer_Changed").execute("ShowBuffer", $("#XI_showBuffer").val);
+                this.app.command("XI_UpdatePrefsCookie").execute("bufferShow", ($("#XI_showBuffer").attr('checked') === 'checked' ));
             });
 
             $("#XI_bufferSize")
                 .on('change', () => {
                 viewModel.sizeBuffer.set($('#XI_bufferSize').val());
-                    this.app.command("XI_bufferSize_Changed").execute();
+                this.app.command("XI_UpdatePrefsCookie").execute("bufferSize", $('#XI_bufferSize').val());
                 })
                 .on('input', () => {
-                    viewModel.sizeBuffer.set($('#bufferSize').val());
+                this.app.command("XI_UpdatePrefsCookie").execute("bufferSize", $('#XI_bufferSize').val());
                 });
 
-            $("#XI_bufferOpacity").on('mouseup', () => {
-                viewModel.opacityBuffer.set($('#bufferOpacity').val());
-                this.app.command("XI_bufferOpacity_Changed").execute();
+            $("#XI_bufferOpacity").on('change', () => {
+                viewModel.opacityBuffer.set($('#XI_bufferOpacity').val());
+                this.app.command("XI_UpdatePrefsCookie").execute("bufferOpacity", $('#XI_bufferOpacity').val());
             })
                 .on('input', () => {
-                    viewModel.opacityBuffer.set($('#bufferOpacity').val());
+                this.app.command("XI_UpdatePrefsCookie").execute("bufferOpacity", $('#XI_bufferOpacity').val());
                 });
 
             $("#XI_bufferColor")
@@ -42,10 +42,10 @@ module TraceXI {
                     preferredFormat: "hex"
                 })
                 .on('change.spectrum', () => {
-                this.app.command("XI_bufferColor_Changed").execute();
+                this.app.command("XI_UpdatePrefsCookie").execute("bufferColor", $('#XI_bufferColor').spectrum("get").toHexString());
                 })
                 .on('hide.spectrum', () => {
-                this.app.command("XI_bufferColor_Changed").execute();
+                this.app.command("XI_UpdatePrefsCookie").execute("bufferColor", $('#XI_bufferColor').spectrum("get").toHexString());
                 });
 
             this.app.event("ViewDeactivatedEvent").subscribe(this, function (event) {
@@ -67,10 +67,10 @@ module TraceXI {
                 case "InitProperties":
                     //data is userPrefs
                     let userPrefs = data;
-                    $("#bufferColor").spectrum("set", userPrefs.buffer.color);
-                    $("#bufferOpacity").val(userPrefs.buffer.opacity);
-                    $('#bufferSize').val(userPrefs.bufferSize);
-
+                    $("#XI_bufferColor").spectrum("set", userPrefs.bufferColor);
+                    $("#XI_bufferOpacity").val(userPrefs.bufferOpacity );
+                    $('#XI_bufferSize').val(userPrefs.bufferSize);
+                    
                     break;
             }
         }

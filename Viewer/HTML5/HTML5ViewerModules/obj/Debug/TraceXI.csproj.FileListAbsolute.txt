@@ -4,3 +4,5 @@ C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\bin\TraceXI.pdb
 C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\obj\Debug\TraceXI.dll
 C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\obj\Debug\TraceXI.pdb
 C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\obj\Debug\TraceXI.csprojResolveAssemblyReference.cache
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\bin\Modules\TraceXI\Images\FindFeeder1.png
+C:\TraceXI\Viewer\HTML5\HTML5ViewerModules\bin\Resources\Compiled\Images\FindFeeder1.png

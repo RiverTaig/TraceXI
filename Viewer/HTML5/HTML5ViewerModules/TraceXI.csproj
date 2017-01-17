@@ -16,17 +16,23 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Modules\TraceXI\Readme.txt" />
     <Content Include="Modules\TraceXI\BufferOptionsXI.css" />
     <Content Include="Modules\TraceXI\BufferOptionsXI.html" />
+    <Content Include="Modules\TraceXI\FindFeederModule.css" />
+    <Content Include="Modules\TraceXI\FindFeederView.html" />
+    <Content Include="Modules\TraceXI\Images\FindFeeder1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Modules\TraceXI\TraceOptionsXI.css" />
     <Content Include="Modules\TraceXI\TraceOptionsXI.html" />
     <Content Include="ResourceManifest.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Resources\Compiled\TraceXI_out.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Compiled\Images\FindFeeder1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -40,15 +46,16 @@
     <Content Include="Modules\TraceXI\Language.json" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Modules\TraceXI\BufferOptionsXI_Model.ts" />
+    <TypeScriptCompile Include="Modules\TraceXI\FindFeederView.ts" />
+    <TypeScriptCompile Include="Modules\TraceXI\FindFeederViewModel.ts" />
     <TypeScriptCompile Include="Modules\TraceXI\specturn.d.ts" />
-    <TypeScriptCompile Include="Modules\TraceXI\TraceOptionsXI_Model.ts" />
     <TypeScriptCompile Include="Modules\TraceXI\BufferOptionsXI_View.ts" />
     <TypeScriptCompile Include="Modules\TraceXI\BufferOptionsXI_ViewModel.ts" />
     <TypeScriptCompile Include="Modules\TraceXI\TraceXI_Module.ts" />
     <TypeScriptCompile Include="Modules\TraceXI\TraceOptionsXI_View.ts" />
     <TypeScriptCompile Include="Modules\TraceXI\TraceOptionsXI_ViewModel.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
